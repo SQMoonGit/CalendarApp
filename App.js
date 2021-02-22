@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, StatusBar, Button} from 'react-native';
-import DayButton from './src/components/DayButton';
+import MonthFormat from './src/components/MonthFormat';
 
 const CalendarDays = (props) => {
   let days = [];
@@ -35,7 +35,7 @@ const App = () => {
           <Button style={styles.months} title=">"></Button>
         </View>
         <View style={styles.sectionContainer}>
-          <DayButton title="something"></DayButton>
+          {/* <DayButton title="something" color="blue"></DayButton> */}
           {/* <CalendarDays style={styles.calendarDays}></CalendarDays> */}
         </View>
       </View>

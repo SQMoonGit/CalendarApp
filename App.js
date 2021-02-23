@@ -8,16 +8,17 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, StatusBar, Button} from 'react-native';
-import MonthFormat from './src/components/MonthFormat';
+import DayButton from './src/components/DayButton';
+// import MonthFormat from './src/components/MonthFormat';
 
 const CalendarDays = (props) => {
   let days = [];
   for (let x = 1; x < 32; x++) {
     days.push(
-      <Button
-        style={{paddingHorizontal: 32, marginHorizontal: 32}}
+      <DayButton
+        style={{color: 'blue'}}
         key={x}
-        title={x.toString()}></Button>,
+        title={x.toString()}></DayButton>,
     );
   }
   return <Text>{days}</Text>;
@@ -35,8 +36,23 @@ const App = () => {
           <Button style={styles.months} title=">"></Button>
         </View>
         <View style={styles.sectionContainer}>
-          {/* <DayButton title="something" color="blue"></DayButton> */}
-          {/* <CalendarDays style={styles.calendarDays}></CalendarDays> */}
+          {/* <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton>
+          <DayButton title="30" color="blue"></DayButton> */}
+
+          <CalendarDays style={styles.calendarDays}></CalendarDays>
         </View>
       </View>
     </>
@@ -56,12 +72,14 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    backgroundColor: 'yellow',
+    backgroundColor: 'white',
   },
   sectionContainer: {
+    alignSelf: 'center',
+    paddingHorizontal: 15,
     flex: 4,
-    marginBottom: 32,
-    paddingHorizontal: 24,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
   },
   calendarDays: {
     alignItems: 'stretch',

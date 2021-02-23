@@ -8,21 +8,7 @@
 
 import React from 'react';
 import {StyleSheet, View, Text, StatusBar, Button} from 'react-native';
-import DayButton from './src/components/DayButton';
-// import MonthFormat from './src/components/MonthFormat';
-
-const CalendarDays = (props) => {
-  let days = [];
-  for (let x = 1; x < 32; x++) {
-    days.push(
-      <DayButton
-        style={{color: 'blue'}}
-        key={x}
-        title={x.toString()}></DayButton>,
-    );
-  }
-  return <Text>{days}</Text>;
-};
+import MonthFormat from './src/components/MonthFormat';
 
 const App = () => {
   return (
@@ -36,23 +22,7 @@ const App = () => {
           <Button style={styles.months} title=">"></Button>
         </View>
         <View style={styles.sectionContainer}>
-          {/* <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton>
-          <DayButton title="30" color="blue"></DayButton> */}
-
-          <CalendarDays style={styles.calendarDays}></CalendarDays>
+          <MonthFormat></MonthFormat>
         </View>
       </View>
     </>
@@ -68,18 +38,14 @@ const styles = StyleSheet.create({
   },
   months: {
     textAlign: 'center',
-    // alignItems: 'stretch',
   },
   body: {
     flex: 1,
     backgroundColor: 'white',
   },
   sectionContainer: {
-    alignSelf: 'center',
-    paddingHorizontal: 15,
+    paddingHorizontal: 10,
     flex: 4,
-    flexWrap: 'wrap',
-    flexDirection: 'row',
   },
   calendarDays: {
     alignItems: 'stretch',

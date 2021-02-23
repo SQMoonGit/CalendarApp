@@ -3,17 +3,27 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
-  backgroundcolor: #002366;
-  height: 500px;
-  width: 500px;
+  color: #002366;
+  align-self: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
-const MonthFormat = (props) => {
-  const daysInMonth = () => {
-    return new Date(props.year, props.month, 0).getDate();
-  };
+const MonthFormat = () => {
+  const today = new Date();
+  const daysInMonth = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    0,
+  ).getDate();
+  let days = [];
+  for (let x = 1; x <= daysInMonth; x++) {
+    days.push(
+      <DayButton color="gold" key={x} title={x.toString()}></DayButton>,
+    );
+  }
 
-  return <Wrapper></Wrapper>;
+  return <Wrapper>{days}</Wrapper>;
 };
 
 export default MonthFormat;

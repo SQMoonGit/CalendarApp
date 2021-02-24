@@ -3,11 +3,9 @@ import styled from 'styled-components/native';
 
 const Wrapper = styled.TouchableOpacity`
   flex-direction: row;
-  margin: 2px 0 0 2px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  width: 80px;
-  height: 80px;
+  border: 0.5px solid black;
+  width: 20%;
+  height: 80%;
 `;
 
 const Title = styled.Text`
@@ -18,6 +16,7 @@ const Title = styled.Text`
 const DayButton = (props) => {
   return (
     <Wrapper
+      activeOpacity={props.opacity}
       onPress={props.onPress}
       active={props.active}
       style={{backgroundColor: props.color}}>

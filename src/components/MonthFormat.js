@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
-  color: #002366;
   align-self: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -19,7 +18,11 @@ const MonthFormat = () => {
   let days = [];
   for (let x = 1; x <= daysInMonth; x++) {
     days.push(
-      <DayButton color="gold" key={x} title={x.toString()}></DayButton>,
+      <DayButton
+        opacity={0.6}
+        color="gold"
+        key={x}
+        title={x.toString()}></DayButton>,
     );
   }
 

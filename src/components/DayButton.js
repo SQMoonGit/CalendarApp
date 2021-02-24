@@ -4,8 +4,8 @@ import styled from 'styled-components/native';
 const Wrapper = styled.TouchableOpacity`
   flex-direction: row;
   border: 0.5px solid black;
-  width: 20%;
-  height: 80%;
+  width: 14%;
+  height: 100%;
 `;
 
 const Title = styled.Text`

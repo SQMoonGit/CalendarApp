@@ -9,14 +9,15 @@ import MonthFormat from './src/components/MonthFormat';
 import CalendarHeader from './src/components/CalendarHeader';
 
 const App = () => {
+  const today = new Date();
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <View style={styles.calendarHeader}>
-        <CalendarHeader></CalendarHeader>
+        <CalendarHeader date={today}></CalendarHeader>
       </View>
       <View style={styles.sectionContainer}>
-        <MonthFormat></MonthFormat>
+        <MonthFormat date={today}></MonthFormat>
       </View>
     </>
   );

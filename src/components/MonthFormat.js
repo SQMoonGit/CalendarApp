@@ -6,13 +6,13 @@ const Wrapper = styled.View`
   align-self: center;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
-const MonthFormat = () => {
-  const today = new Date();
+const MonthFormat = (props) => {
   const daysInMonth = new Date(
-    today.getFullYear(),
-    today.getMonth(),
+    props.date.getFullYear(),
+    props.date.getMonth(),
     0,
   ).getDate();
   let days = [];

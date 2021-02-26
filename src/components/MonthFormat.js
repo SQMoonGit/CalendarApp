@@ -4,9 +4,9 @@ import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
   align-self: center;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 `;
 
 const MonthFormat = (props) => {
@@ -20,7 +20,7 @@ const MonthFormat = (props) => {
     days.push(
       <DayButton
         opacity={0.6}
-        color="gold"
+        color="white"
         key={x}
         title={x.toString()}></DayButton>,
     );

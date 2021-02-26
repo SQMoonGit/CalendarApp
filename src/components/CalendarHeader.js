@@ -2,24 +2,41 @@ import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import styled from 'styled-components/native';
 
+const Months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 const Wrapper = styled.View`
   flex-direction: row;
-  width: 100px;
-  height: 80px;
   align-self: center;
   justify-content: center;
+  margin-vertical: 16px;
+  width: 100px;
+  height: auto;
 `;
 
 const WeekdayRow = styled.Text`
   flex-direction: row;
-  width: 60%;
-  height: 100%;
   text-align: center;
+  width: 58%;
+  height: 100%;
 `;
 
 const styles = StyleSheet.create({
   menuButtons: {
-    padding: 20,
+    margin: 'auto',
+    padding: 'auto',
     color: 'black',
     alignSelf: 'center',
     width: '100%',
@@ -56,7 +73,7 @@ const CalendarHeader = (props) => {
     <View>
       <Wrapper>
         <MenuButton text="<"></MenuButton>
-        <MenuButton text={month}></MenuButton>
+        <MenuButton text={Months[month]}></MenuButton>
         <MenuButton text={year}></MenuButton>
         <MenuButton text=">"></MenuButton>
       </Wrapper>

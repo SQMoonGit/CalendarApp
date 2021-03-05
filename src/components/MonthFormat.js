@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 const MonthFormat = (props) => {
   const daysInMonth = new Date(
     props.date.getFullYear(),
-    props.date.getMonth(),
+    props.date.getMonth() + 1,
     0,
   ).getDate();
   let days = [];

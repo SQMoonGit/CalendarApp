@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -67,15 +67,35 @@ const MenuButton = (props) => {
 };
 
 const CalendarHeader = (props) => {
-  const month = props.date.getMonth();
-  const year = props.date.getFullYear();
+  const [month, setMonth] = useState(props.date.getMonth());
+  const [year, setYear] = useState(props.date.getFullYear());
+
+  const ChangeMonth = (change) => {
+    if (change === 0) {
+      if (month === 0) {
+        setMonth(11);
+        setYear(year - 1);
+      } else {
+        setMonth(month - 1);
+      }
+    } else {
+      if (month === 11) {
+        setMonth(0);
+        setYear(year + 1);
+      } else {
+        setMonth(month + 1);
+      }
+    }
+    props.onDateChange(month, year);
+  };
+
   return (
     <View>
       <Wrapper>
-        <MenuButton text="<"></MenuButton>
+        <MenuButton text="<" onPress={() => ChangeMonth(0)}></MenuButton>
         <MenuButton text={Months[month]}></MenuButton>
         <MenuButton text={year}></MenuButton>
-        <MenuButton text=">"></MenuButton>
+        <MenuButton text=">" onPress={() => ChangeMonth(1)}></MenuButton>
       </Wrapper>
       <Wrapper>
         <WeekDisplay></WeekDisplay>
